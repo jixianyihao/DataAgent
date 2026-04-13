@@ -1,0 +1,4 @@
+node_modules/
+screenshots/
+*.pyc
+.DS_Store
