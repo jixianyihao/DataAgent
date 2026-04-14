@@ -1824,8 +1824,6 @@ body{font-family:-apple-system,"PingFang SC","Microsoft YaHei","Helvetica Neue",
           </tbody>
         </table>
       </div>
-    </div>
-
     </div><!-- /gov-panel-1 -->
 
     <!-- ===== Tab 2: 敏感数据 ===== -->
@@ -2582,122 +2580,95 @@ print(<span style="color:#10b981">f"Pipeline completed. Rows written: {result_df
         <span style="font-size:11px;color:#86909c">🟢 无需Agent · 自主运行</span>
       </div>
 
-      <!-- Tenant artifacts + resource management -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px">
-        <!-- Left: Tenant artifacts -->
-        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;overflow:hidden">
-          <div style="padding:12px 16px;border-bottom:1px solid #f0f0f0;display:flex;align-items:center">
-            <span style="font-size:13px;font-weight:700;color:#1d2129">📦 租户产物</span>
-            <span style="font-size:10px;color:#86909c;margin-left:8px">工作流、API、报告、告警一览</span>
+      <!-- Tenant artifacts row -->
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px">
+        <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:14px;cursor:pointer">
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px">
+            <span style="width:28px;height:28px;border-radius:7px;background:#3b82f6;display:flex;align-items:center;justify-content:center;font-size:14px">🔄</span>
+            <span style="font-size:11px;color:#1e40af;font-weight:600">工作流</span>
           </div>
-          <div style="padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:12px">
-            <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:16px;cursor:pointer;transition:box-shadow .15s" onmouseover="this.style.boxShadow='0 2px 8px rgba(59,130,246,0.15)'" onmouseout="this.style.boxShadow='none'">
-              <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-                <span style="width:32px;height:32px;border-radius:8px;background:#3b82f6;display:flex;align-items:center;justify-content:center;font-size:16px">🔄</span>
-                <span style="font-size:12px;color:#1e40af;font-weight:600">工作流</span>
-              </div>
-              <div style="font-size:28px;font-weight:700;color:#1d2129" id="ops-wf">6</div>
-              <div style="font-size:10px;color:#3b82f6;margin-top:2px">活跃运行中 · ↑ 3 本周新增</div>
-            </div>
-            <div style="background:#ecfdf5;border:1px solid #a7f3d0;border-radius:10px;padding:16px;cursor:pointer;transition:box-shadow .15s" onmouseover="this.style.boxShadow='0 2px 8px rgba(16,185,129,0.15)'" onmouseout="this.style.boxShadow='none'">
-              <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-                <span style="width:32px;height:32px;border-radius:8px;background:#10b981;display:flex;align-items:center;justify-content:center;font-size:16px">🔌</span>
-                <span style="font-size:12px;color:#065f46;font-weight:600">已发布API</span>
-              </div>
-              <div style="font-size:28px;font-weight:700;color:#1d2129" id="ops-api">3</div>
-              <div style="font-size:10px;color:#10b981;margin-top:2px">今日调用 1,247 次</div>
-            </div>
-            <div style="background:#f5f3ff;border:1px solid #c4b5fd;border-radius:10px;padding:16px;cursor:pointer;transition:box-shadow .15s" onmouseover="this.style.boxShadow='0 2px 8px rgba(139,92,246,0.15)'" onmouseout="this.style.boxShadow='none'">
-              <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-                <span style="width:32px;height:32px;border-radius:8px;background:#8b5cf6;display:flex;align-items:center;justify-content:center;font-size:16px">📊</span>
-                <span style="font-size:12px;color:#5b21b6;font-weight:600">自动报告</span>
-              </div>
-              <div style="font-size:28px;font-weight:700;color:#1d2129" id="ops-rpt">5</div>
-              <div style="font-size:10px;color:#8b5cf6;margin-top:2px">本月累计 23 份</div>
-            </div>
-            <div style="background:#fffbeb;border:1px solid #fcd34d;border-radius:10px;padding:16px;cursor:pointer;transition:box-shadow .15s" onmouseover="this.style.boxShadow='0 2px 8px rgba(245,158,11,0.15)'" onmouseout="this.style.boxShadow='none'">
-              <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-                <span style="width:32px;height:32px;border-radius:8px;background:#f59e0b;display:flex;align-items:center;justify-content:center;font-size:16px">🔔</span>
-                <span style="font-size:12px;color:#92400e;font-weight:600">活跃告警</span>
-              </div>
-              <div style="font-size:28px;font-weight:700;color:#d97706" id="ops-alt">2</div>
-              <div style="font-size:10px;color:#dc2626;margin-top:2px">1 高优 · 1 普通</div>
-            </div>
-          </div>
+          <div style="font-size:24px;font-weight:700;color:#1d2129" id="ops-wf">6</div>
+          <div style="font-size:10px;color:#3b82f6">活跃运行中 · ↑ 3 本周新增</div>
         </div>
-        <!-- Right: Resource management -->
-        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:10px;overflow:hidden">
-          <div style="padding:12px 16px;border-bottom:1px solid #f0f0f0;display:flex;align-items:center">
-            <span style="font-size:13px;font-weight:700;color:#1d2129">💻 资源管理</span>
-            <span style="font-size:10px;color:#86909c;margin-left:8px">CPU · 内存 · 存储 · GPU</span>
-            <span style="margin-left:auto;font-size:10px;color:#3b82f6;cursor:pointer">申请扩容 →</span>
+        <div style="background:#ecfdf5;border:1px solid #a7f3d0;border-radius:10px;padding:14px;cursor:pointer">
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px">
+            <span style="width:28px;height:28px;border-radius:7px;background:#10b981;display:flex;align-items:center;justify-content:center;font-size:14px">🔌</span>
+            <span style="font-size:11px;color:#065f46;font-weight:600">已发布API</span>
           </div>
-          <div style="padding:16px;display:grid;grid-template-columns:1fr 1fr;gap:14px">
-            <!-- CPU -->
-            <div style="background:#f8fafc;border-radius:10px;padding:14px">
-              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-                <div style="display:flex;align-items:center;gap:6px">
-                  <span style="width:24px;height:24px;border-radius:6px;background:#3b82f6;display:flex;align-items:center;justify-content:center;font-size:12px;color:#fff">⚡</span>
-                  <span style="font-size:12px;font-weight:600;color:#1d2129">CPU</span>
-                </div>
-                <span id="ops-cpu-text" style="font-size:11px;color:#1d2129;font-weight:600">32 / 64 核</span>
-              </div>
-              <div style="height:8px;background:#e2e8f0;border-radius:4px;overflow:hidden;margin-bottom:6px">
-                <div id="ops-cpu-bar" style="height:100%;width:50%;background:#3b82f6;border-radius:4px;transition:width .3s"></div>
-              </div>
-              <div style="display:flex;justify-content:space-between;font-size:10px;color:#86909c">
-                <span>已用 50%</span><span>剩余 32 核可用</span>
-              </div>
-            </div>
-            <!-- 内存 -->
-            <div style="background:#f8fafc;border-radius:10px;padding:14px">
-              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-                <div style="display:flex;align-items:center;gap:6px">
-                  <span style="width:24px;height:24px;border-radius:6px;background:#8b5cf6;display:flex;align-items:center;justify-content:center;font-size:12px;color:#fff">🧠</span>
-                  <span style="font-size:12px;font-weight:600;color:#1d2129">内存</span>
-                </div>
-                <span id="ops-mem-text" style="font-size:11px;color:#1d2129;font-weight:600">96 / 128 GB</span>
-              </div>
-              <div style="height:8px;background:#e2e8f0;border-radius:4px;overflow:hidden;margin-bottom:6px">
-                <div id="ops-mem-bar" style="height:100%;width:75%;background:#f59e0b;border-radius:4px;transition:width .3s"></div>
-              </div>
-              <div style="display:flex;justify-content:space-between;font-size:10px;color:#86909c">
-                <span style="color:#d97706">已用 75%</span><span>剩余 32 GB</span>
-              </div>
-            </div>
-            <!-- 存储 -->
-            <div style="background:#f8fafc;border-radius:10px;padding:14px">
-              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-                <div style="display:flex;align-items:center;gap:6px">
-                  <span style="width:24px;height:24px;border-radius:6px;background:#06b6d4;display:flex;align-items:center;justify-content:center;font-size:12px;color:#fff">💾</span>
-                  <span style="font-size:12px;font-weight:600;color:#1d2129">存储</span>
-                </div>
-                <span id="ops-sto-text" style="font-size:11px;color:#1d2129;font-weight:600">1.8 / 3.0 TB</span>
-              </div>
-              <div style="height:8px;background:#e2e8f0;border-radius:4px;overflow:hidden;margin-bottom:6px">
-                <div id="ops-sto-bar" style="height:100%;width:60%;background:#06b6d4;border-radius:4px;transition:width .3s"></div>
-              </div>
-              <div style="display:flex;justify-content:space-between;font-size:10px;color:#86909c">
-                <span>已用 60%</span><span>剩余 1.2 TB</span>
-              </div>
-            </div>
-            <!-- GPU -->
-            <div style="background:#f8fafc;border-radius:10px;padding:14px">
-              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-                <div style="display:flex;align-items:center;gap:6px">
-                  <span style="width:24px;height:24px;border-radius:6px;background:#10b981;display:flex;align-items:center;justify-content:center;font-size:12px;color:#fff">🎮</span>
-                  <span style="font-size:12px;font-weight:600;color:#1d2129">GPU</span>
-                </div>
-                <span id="ops-gpu-text" style="font-size:11px;color:#1d2129;font-weight:600">2 / 4 卡</span>
-              </div>
-              <div style="height:8px;background:#e2e8f0;border-radius:4px;overflow:hidden;margin-bottom:6px">
-                <div id="ops-gpu-bar" style="height:100%;width:50%;background:#10b981;border-radius:4px;transition:width .3s"></div>
-              </div>
-              <div style="display:flex;justify-content:space-between;font-size:10px;color:#86909c">
-                <span>已用 50%</span><span>剩余 2 卡可用</span>
-              </div>
-            </div>
+          <div style="font-size:24px;font-weight:700;color:#1d2129" id="ops-api">3</div>
+          <div style="font-size:10px;color:#10b981">今日调用 1,247 次</div>
+        </div>
+        <div style="background:#f5f3ff;border:1px solid #c4b5fd;border-radius:10px;padding:14px;cursor:pointer">
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px">
+            <span style="width:28px;height:28px;border-radius:7px;background:#8b5cf6;display:flex;align-items:center;justify-content:center;font-size:14px">📊</span>
+            <span style="font-size:11px;color:#5b21b6;font-weight:600">自动报告</span>
           </div>
+          <div style="font-size:24px;font-weight:700;color:#1d2129" id="ops-rpt">5</div>
+          <div style="font-size:10px;color:#8b5cf6">本月累计 23 份</div>
+        </div>
+        <div style="background:#fffbeb;border:1px solid #fcd34d;border-radius:10px;padding:14px;cursor:pointer">
+          <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px">
+            <span style="width:28px;height:28px;border-radius:7px;background:#f59e0b;display:flex;align-items:center;justify-content:center;font-size:14px">🔔</span>
+            <span style="font-size:11px;color:#92400e;font-weight:600">活跃告警</span>
+          </div>
+          <div style="font-size:24px;font-weight:700;color:#d97706" id="ops-alt">2</div>
+          <div style="font-size:10px;color:#dc2626">1 高优 · 1 普通</div>
+        </div>
+      </div>
+
+      <!-- Resource management row -->
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px">
+        <div style="background:#f8fafc;border-radius:10px;padding:12px;border:1px solid #e2e8f0">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+            <div style="display:flex;align-items:center;gap:5px">
+              <span style="width:22px;height:22px;border-radius:5px;background:#3b82f6;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff">⚡</span>
+              <span style="font-size:11px;font-weight:600;color:#1d2129">CPU</span>
+            </div>
+            <span id="ops-cpu-text" style="font-size:10px;color:#1d2129;font-weight:600">32/64核</span>
+          </div>
+          <div style="height:6px;background:#e2e8f0;border-radius:3px;overflow:hidden">
+            <div id="ops-cpu-bar" style="height:100%;width:50%;background:#3b82f6;border-radius:3px"></div>
+          </div>
+          <div style="font-size:9px;color:#86909c;margin-top:4px">已用 50% · 剩余 32 核</div>
+        </div>
+        <div style="background:#f8fafc;border-radius:10px;padding:12px;border:1px solid #e2e8f0">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+            <div style="display:flex;align-items:center;gap:5px">
+              <span style="width:22px;height:22px;border-radius:5px;background:#8b5cf6;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff">🧠</span>
+              <span style="font-size:11px;font-weight:600;color:#1d2129">内存</span>
+            </div>
+            <span id="ops-mem-text" style="font-size:10px;color:#1d2129;font-weight:600">96/128GB</span>
+          </div>
+          <div style="height:6px;background:#e2e8f0;border-radius:3px;overflow:hidden">
+            <div id="ops-mem-bar" style="height:100%;width:75%;background:#f59e0b;border-radius:3px"></div>
+          </div>
+          <div style="font-size:9px;color:#d97706;margin-top:4px">已用 75% · 剩余 32 GB</div>
+        </div>
+        <div style="background:#f8fafc;border-radius:10px;padding:12px;border:1px solid #e2e8f0">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+            <div style="display:flex;align-items:center;gap:5px">
+              <span style="width:22px;height:22px;border-radius:5px;background:#06b6d4;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff">💾</span>
+              <span style="font-size:11px;font-weight:600;color:#1d2129">存储</span>
+            </div>
+            <span id="ops-sto-text" style="font-size:10px;color:#1d2129;font-weight:600">1.8/3.0TB</span>
+          </div>
+          <div style="height:6px;background:#e2e8f0;border-radius:3px;overflow:hidden">
+            <div id="ops-sto-bar" style="height:100%;width:60%;background:#06b6d4;border-radius:3px"></div>
+          </div>
+          <div style="font-size:9px;color:#86909c;margin-top:4px">已用 60% · 剩余 1.2 TB</div>
+        </div>
+        <div style="background:#f8fafc;border-radius:10px;padding:12px;border:1px solid #e2e8f0">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px">
+            <div style="display:flex;align-items:center;gap:5px">
+              <span style="width:22px;height:22px;border-radius:5px;background:#10b981;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff">🎮</span>
+              <span style="font-size:11px;font-weight:600;color:#1d2129">GPU</span>
+            </div>
+            <span id="ops-gpu-text" style="font-size:10px;color:#1d2129;font-weight:600">2/4卡</span>
+          </div>
+          <div style="height:6px;background:#e2e8f0;border-radius:3px;overflow:hidden">
+            <div id="ops-gpu-bar" style="height:100%;width:50%;background:#10b981;border-radius:3px"></div>
+          </div>
+          <div style="font-size:9px;color:#86909c;margin-top:4px">已用 50% · 剩余 2 卡</div>
         </div>
       </div>
 
